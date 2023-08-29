@@ -49,25 +49,25 @@
 
  Q% = _REMOVE_CHECKSUMS \ Set Q% to TRUE to max out the default commander, FALSE
                         \ for the standard default commander (this is set to
-                        \ TRUE if checksums are disabled, just for convenience)
+                        \ TRUE if checksums are disabled, just for convenience) Тут мы с пиратами боремся
 
  NOST = 18              \ The number of stardust particles in normal space (this
-                        \ goes down to 3 in witchspace)
+                        \ goes down to 3 in witchspace) У нас тут магическое пространство есть
 
  NOSH = 12              \ The maximum number of ships in our local bubble of
-                        \ universe
+                        \ universe 144 перекресные связи в массиве стрельбы
 
- NTY = 13               \ The number of different ship types
+ NTY = 13               \ The number of different ship types Чертова дюжина, а не 40 сороков
 
- COPS = 2               \ Ship type for a Viper
- THG = 6                \ Ship type for a Thargoid
- CYL = 7                \ Ship type for a Cobra Mk III (trader)
+ COPS = 2               \ Ship type for a Viper Начальство янков сипаев или по простому полиция
+ THG = 6                \ Ship type for a Thargoid Наши предки
+ CYL = 7                \ Ship type for a Cobra Mk III (trader) Янки Сипаи
  SST = 8                \ Ship type for the space station
  MSL = 9                \ Ship type for a missile
  AST = 10               \ Ship type for an asteroid
  OIL = 11               \ Ship type for a cargo canister
- TGL = 12               \ Ship type for a Thargon
- ESC = 13               \ Ship type for an escape pod
+ TGL = 12               \ Ship type for a Thargon Дроны таргоидов
+ ESC = 13               \ Ship type for an escape pod Платформа Староверов
 
  POW = 15               \ Pulse laser power
 
