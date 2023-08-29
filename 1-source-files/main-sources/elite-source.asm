@@ -155,7 +155,7 @@
 
 .XX16
 
- SKIP 18                \ Temporary storage for a block of values, used in a
+ SKIP 18                \ Temporary storage for a block of values, used in a Блок 4 чисел, используется как вектор с нулем для операций со звуковыми семплами и вычисления и отрисовки геометрических объектов
                         \ number of places
 
 .P
@@ -164,7 +164,7 @@
 
 .XX0
 
- SKIP 2                 \ Temporary storage, used to store the address of a ship
+ SKIP 2                 \ Temporary storage, used to store the address of a ship Хук на новый корабль
                         \ blueprint. For example, it is used when we add a new
                         \ ship to the local bubble in routine NWSHP, and it
                         \ contains the address of the current ship's blueprint
@@ -173,33 +173,33 @@
 
 .INF
 
- SKIP 2                 \ Temporary storage, typically used for storing the
+ SKIP 2                 \ Temporary storage, typically used for storing the Информация о корабле 
                         \ address of a ship's data block, so it can be copied
                         \ to and from the internal workspace at INWK
 
 .V
 
- SKIP 2                 \ Temporary storage, typically used for storing an
+ SKIP 2                 \ Temporary storage, typically used for storing an Переменная
                         \ address pointer
 
 .XX
 
- SKIP 2                 \ Temporary storage, typically used for storing a 16-bit
+ SKIP 2                 \ Temporary storage, typically used for storing a 16-bit Координата X
                         \ x-coordinate
 
 .YY
 
- SKIP 2                 \ Temporary storage, typically used for storing a 16-bit
+ SKIP 2                 \ Temporary storage, typically used for storing a 16-bit Координата Y
                         \ y-coordinate
 
 .SUNX
 
- SKIP 2                 \ The 16-bit x-coordinate of the vertical centre axis
+ SKIP 2                 \ The 16-bit x-coordinate of the vertical centre axis Вертикальная координата Солнца
                         \ of the sun (which might be off-screen)
 
 .BETA
 
- SKIP 1                 \ The current pitch angle beta, which is reduced from
+ SKIP 1                 \ The current pitch angle beta, which is reduced from Скорость второй восьмерки
                         \ JSTY to a sign-magnitude value between -8 and +8
                         \
                         \ This describes how fast we are pitching our ship, and
@@ -210,12 +210,12 @@
 
 .BET1
 
- SKIP 1                 \ The magnitude of the pitch angle beta, i.e. |beta|,
+ SKIP 1                 \ The magnitude of the pitch angle beta, i.e. |beta|, Наклон второй восьмёрки
                         \ which is a positive value between 0 and 8
 
 .XC
 
- SKIP 1                 \ The x-coordinate of the text cursor (i.e. the text
+ SKIP 1                 \ The x-coordinate of the text cursor (i.e. the text Позиция курстора в строке включая рамки
                         \ column), which can be from 0 to 32
                         \
                         \ A value of 0 denotes the leftmost column and 32 the
@@ -226,7 +226,7 @@
 
 .YC
 
- SKIP 1                 \ The y-coordinate of the text cursor (i.e. the text
+ SKIP 1                 \ The y-coordinate of the text cursor (i.e. the text Номер строчки до 23
                         \ row), which can be from 0 to 23
                         \
                         \ The screen actually has 31 character rows if you
@@ -241,9 +241,9 @@
 
 .QQ22
 
- SKIP 2                 \ The two hyperspace countdown counters
-                        \
-                        \ Before a hyperspace jump, both QQ22 and QQ22+1 are
+ SKIP 2                 \ The two hyperspace countdown counters Спец эффект гиперпрыжка
+                        \ Но привязанный к циклу выполнения программы, чтоб другие участники то же двигались
+                        \ Before a hyperspace jump, both QQ22 and QQ22+1 are 
                         \ set to 15
                         \
                         \ QQ22 is an internal counter that counts down by 1
@@ -255,13 +255,13 @@
                         \ takes 15 iterations to happen, but subsequent ticks
                         \ take 5 iterations each)
                         \
-                        \ QQ22+1 contains the number that's shown on-screen
+                        \ QQ22+1 contains the number that's shown on-screen Обратный отсчет 5 секунд когда еще можно ввести трик код
                         \ during the countdown. It counts down from 15 to 1, and
                         \ when it hits 0, the hyperspace engines kick in
 
 .ECMA
 
- SKIP 1                 \ The E.C.M. countdown timer, which determines whether
+ SKIP 1                 \ The E.C.M. countdown timer, which determines whether энергия противоракетной системы
                         \ an E.C.M. system is currently operating:
                         \
                         \   * 0 = E.C.M. is off
@@ -277,7 +277,7 @@
 
 .XX15
 
- SKIP 0                 \ Temporary storage, typically used for storing screen
+ SKIP 0                 \ Temporary storage, typically used for storing screen Структура линии
                         \ coordinates in line-drawing routines
                         \
                         \ There are six bytes of storage, from XX15 TO XX15+5.
@@ -322,11 +322,11 @@
 
 .K
 
- SKIP 4                 \ Temporary storage, used in a number of places
+ SKIP 4                 \ Temporary storage, used in a number of places Диаметр планеты
 
 .KL
 
- SKIP 1                 \ The following bytes implement a key logger that
+ SKIP 1                 \ The following bytes implement a key logger that Програмирование компьютера во время паузы полета
                         \ enables Elite to scan for concurrent key presses of
                         \ the primary flight keys, plus a secondary flight key
                         \
@@ -338,7 +338,7 @@
 
 .KY1
 
- SKIP 1                 \ "?" is being pressed
+ SKIP 1                 \ "?" is being pressed Уменьшить скорость
                         \
                         \   * 0 = no
                         \
@@ -346,7 +346,7 @@
 
 .KY2
 
- SKIP 1                 \ Space is being pressed
+ SKIP 1                 \ Space is being pressed Увеличить скорость
                         \
                         \   * 0 = no
                         \
@@ -354,7 +354,7 @@
 
 .KY3
 
- SKIP 1                 \ "<" is being pressed
+ SKIP 1                 \ "<" is being pressed Вращение влево
                         \
                         \   * 0 = no
                         \
@@ -362,7 +362,7 @@
 
 .KY4
 
- SKIP 1                 \ ">" is being pressed
+ SKIP 1                 \ ">" is being pressed Вращение вправо
                         \
                         \   * 0 = no
                         \
@@ -370,7 +370,7 @@
 
 .KY5
 
- SKIP 1                 \ "X" is being pressed
+ SKIP 1                 \ "X" is being pressed Вниз
                         \
                         \   * 0 = no
                         \
@@ -378,7 +378,7 @@
 
 .KY6
 
- SKIP 1                 \ "S" is being pressed
+ SKIP 1                 \ "S" is being pressed Вверх
                         \
                         \   * 0 = no
                         \
@@ -386,7 +386,7 @@
 
 .KY7
 
- SKIP 1                 \ "A" is being pressed
+ SKIP 1                 \ "A" is being pressed Стрельба
                         \
                         \   * 0 = no
                         \
@@ -397,7 +397,7 @@
 
 .KY12
 
- SKIP 1                 \ TAB is being pressed
+ SKIP 1                 \ TAB is being pressed Взорвать бомбу
                         \
                         \   * 0 = no
                         \
@@ -405,7 +405,7 @@
 
 .KY13
 
- SKIP 1                 \ ESCAPE is being pressed
+ SKIP 1                 \ ESCAPE is being pressed Проснуться
                         \
                         \   * 0 = no
                         \
@@ -413,7 +413,7 @@
 
 .KY14
 
- SKIP 1                 \ "T" is being pressed
+ SKIP 1                 \ "T" is being pressed Ракета
                         \
                         \   * 0 = no
                         \
@@ -421,7 +421,7 @@
 
 .KY15
 
- SKIP 1                 \ "U" is being pressed
+ SKIP 1                 \ "U" is being pressed Убрать ракету
                         \
                         \   * 0 = no
                         \
@@ -429,7 +429,7 @@
 
 .KY16
 
- SKIP 1                 \ "M" is being pressed
+ SKIP 1                 \ "M" is being pressed Запустить ракету
                         \
                         \   * 0 = no
                         \
@@ -437,7 +437,7 @@
 
 .KY17
 
- SKIP 1                 \ "E" is being pressed
+ SKIP 1                 \ "E" is being pressed Включить ПВО
                         \
                         \   * 0 = no
                         \
@@ -445,7 +445,7 @@
 
 .KY18
 
- SKIP 1                 \ "J" is being pressed
+ SKIP 1                 \ "J" is being pressed Варп прыжёк
                         \
                         \   * 0 = no
                         \
@@ -453,7 +453,7 @@
 
 .KY19
 
- SKIP 1                 \ "C" is being pressed
+ SKIP 1                 \ "C" is being pressed Включить компьютер
                         \
                         \   * 0 = no
                         \
