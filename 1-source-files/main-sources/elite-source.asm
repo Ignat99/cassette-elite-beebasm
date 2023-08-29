@@ -74,17 +74,17 @@
  NI% = 36               \ The number of bytes in each ship's data block (as
                         \ stored in INWK and K%)
 
- VSCAN = 57             \ Defines the split position in the split-screen mode
+ VSCAN = 57             \ Defines the split position in the split-screen mode Аппаратные ограничения целевого компьютера приводили к смешанному режиму работы видео адаптера
 
  X = 128                \ The centre x-coordinate of the 256 x 192 space view
  Y = 96                 \ The centre y-coordinate of the 256 x 192 space view
 
  f0 = &20               \ Internal key number for red key f0 (Launch, Front)
- f1 = &71               \ Internal key number for red key f1 (Buy Cargo, Rear)
- f2 = &72               \ Internal key number for red key f2 (Sell Cargo, Left)
- f3 = &73               \ Internal key number for red key f3 (Equip Ship, Right)
- f4 = &14               \ Internal key number for red key f4 (Long-range Chart)
- f5 = &74               \ Internal key number for red key f5 (Short-range Chart)
+ f1 = &71               \ Internal key number for red key f1 (Buy Cargo, Rear) 
+ f2 = &72               \ Internal key number for red key f2 (Sell Cargo, Left) Продает левой рукой
+ f3 = &73               \ Internal key number for red key f3 (Equip Ship, Right) Берет правой рукой оружие корабля
+ f4 = &14               \ Internal key number for red key f4 (Long-range Chart) Гиперпрыжки H
+ f5 = &74               \ Internal key number for red key f5 (Short-range Chart) Прыжки J
  f6 = &75               \ Internal key number for red key f6 (Data on System)
  f7 = &16               \ Internal key number for red key f7 (Market Price)
  f8 = &76               \ Internal key number for red key f8 (Status Mode)
@@ -93,17 +93,17 @@
  RE = &23               \ The obfuscation byte used to hide the recursive tokens
                         \ table from crackers viewing the binary code
 
- VIA = &FE00            \ Memory-mapped space for accessing internal hardware,
+ VIA = &FE00            \ Memory-mapped space for accessing internal hardware, Место видеопамяти
                         \ such as the video ULA, 6845 CRTC and 6522 VIAs (also
                         \ known as SHEILA)
 
- OSBYTE = &FFF4         \ The address for the OSBYTE routine, which is used
+ OSBYTE = &FFF4         \ The address for the OSBYTE routine, which is used Поздний хак через синглетоны возможности вводить комбинации клавиш и состояние примитивного джойстика
                         \ three times in the main game code
 
- OSWORD = &FFF1         \ The address for the OSWORD routine, which is used
+ OSWORD = &FFF1         \ The address for the OSWORD routine, which is used Хак через синглетон позволяющий быстрее вводить данные типа имен в видеопамять в том числе и для издавания звуков
                         \ twice in the main game code
 
- OSFILE = &FFDD         \ The address for the OSFILE routine, which is used
+ OSFILE = &FFDD         \ The address for the OSFILE routine, which is used Хук для передачи адреса ленты для записи блока данных на носитель
                         \ once in the main game code
 
 \ ******************************************************************************
