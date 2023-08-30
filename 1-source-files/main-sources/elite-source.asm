@@ -461,7 +461,7 @@
 
 .LAS
 
- SKIP 1                 \ Contains the laser power of the laser fitted to the
+ SKIP 1                 \ Contains the laser power of the laser fitted to the Наличие лазера
                         \ current space view (or 0 if there is no laser fitted
                         \ to the current view)
                         \
@@ -472,7 +472,7 @@
 
 .MSTG
 
- SKIP 1                 \ The current missile lock target
+ SKIP 1                 \ The current missile lock target из 12 целей для захвата по максимальному количеству кораблей
                         \
                         \   * &FF = no target
                         \
@@ -486,7 +486,7 @@
 
 .INWK
 
- SKIP 33                \ The zero-page internal workspace for the current ship
+ SKIP 33                \ The zero-page internal workspace for the current ship Данные для текущего коробля
                         \ data block
                         \
                         \ As operations on zero page locations are faster and
@@ -503,7 +503,7 @@
 
 .XX19
 
- SKIP NI% - 33          \ XX19(1 0) shares its location with INWK(34 33), which
+ SKIP NI% - 33          \ XX19(1 0) shares its location with INWK(34 33), which Начало списка вершин и ребер
                         \ contains the address of the ship line heap
 
 .LSP
@@ -673,7 +673,7 @@
 
 .DL
 
- SKIP 1                 \ Vertical sync flag
+ SKIP 1                 \ Vertical sync flag Прерывание на отрисовку экрана
                         \
                         \ DL gets set to 30 every time we reach vertical sync on
                         \ the video system, which happens 50 times a second
@@ -683,7 +683,7 @@
 
 .TYPE
 
- SKIP 1                 \ The current ship type
+ SKIP 1                 \ The current ship type Тип корабля
                         \
                         \ This is where we store the current ship type for when
                         \ we are iterating through the ships in the local bubble
@@ -692,7 +692,7 @@
 
 .JSTX
 
- SKIP 1                 \ Our current roll rate
+ SKIP 1                 \ Our current roll rate скорость поворота вправо — влево
                         \
                         \ This value is shown in the dashboard's RL indicator,
                         \ and determines the rate at which we are rolling
@@ -711,7 +711,7 @@
 
 .JSTY
 
- SKIP 1                 \ Our current pitch rate
+ SKIP 1                 \ Our current pitch rate скорость поворота вверх — вниз
                         \
                         \ This value is shown in the dashboard's DC indicator,
                         \ and determines the rate at which we are pitching
@@ -730,7 +730,7 @@
 
 .ALPHA
 
- SKIP 1                 \ The current roll angle alpha, which is reduced from
+ SKIP 1                 \ The current roll angle alpha, which is reduced from В 8 раз меньше от нажатия клавиш вращения
                         \ JSTX to a sign-magnitude value between -31 and +31
                         \
                         \ This describes how fast we are rolling our ship, and
@@ -741,7 +741,7 @@
 
 .QQ12
 
- SKIP 1                 \ Our "docked" status
+ SKIP 1                 \ Our "docked" status Вылетели или невылетели
                         \
                         \   * 0 = we are not docked
                         \
@@ -749,13 +749,13 @@
 
 .TGT
 
- SKIP 1                 \ Temporary storage, typically used as a target value
+ SKIP 1                 \ Temporary storage, typically used as a target value счётчик цикла взрыва
                         \ for counters when drawing explosion clouds and partial
                         \ circles
 
 .SWAP
 
- SKIP 1                 \ Temporary storage, used to store a flag that records
+ SKIP 1                 \ Temporary storage, used to store a flag that records Время загрузки формы корабля
                         \ whether or not we had to swap a line's start and end
                         \ coordinates around when clipping the line in routine
                         \ LL145 (the flag is used in places like BLINE to swap
@@ -763,30 +763,30 @@
 
 .COL
 
- SKIP 1                 \ Temporary storage, used to store colour information
+ SKIP 1                 \ Temporary storage, used to store colour information Цвет
                         \ when drawing pixels in the dashboard
 
 .FLAG
 
- SKIP 1                 \ A flag that's used to define whether this is the first
+ SKIP 1                 \ A flag that's used to define whether this is the first Драйвер отложенной загрузки
                         \ call to the ball line routine in BLINE, so it knows
                         \ whether to wait for the second call before storing
                         \ segment data in the ball line heap
 
 .CNT
 
- SKIP 1                 \ Temporary storage, typically used for storing the
+ SKIP 1                 \ Temporary storage, typically used for storing the Счётчик основного цикла
                         \ number of iterations required when looping
 
 .CNT2
 
- SKIP 1                 \ Temporary storage, used in the planet-drawing routine
+ SKIP 1                 \ Temporary storage, used in the planet-drawing routine этап отрисовки вращения планеты
                         \ to store the segment number where the arc of a partial
                         \ circle should start
 
 .STP
 
- SKIP 1                 \ The step size for drawing circles
+ SKIP 1                 \ The step size for drawing circles Сколько сегментов в контуре планеты
                         \
                         \ Circles in Elite are split up into 64 points, and the
                         \ step size determines how many points to skip with each
@@ -811,21 +811,21 @@
 
 .XX14
 
- SKIP 1                 \ This byte appears to be unused
+ SKIP 1                 \ This byte appears to be unused Окончание название планеты
 
 .RAT
 
- SKIP 1                 \ Used to store different signs depending on the current
+ SKIP 1                 \ Used to store different signs depending on the current Как быстро движется эфир
                         \ space view, for use in calculating stardust movement
 
 .RAT2
 
- SKIP 1                 \ Temporary storage, used to store the pitch and roll
+ SKIP 1                 \ Temporary storage, used to store the pitch and roll Направление спирали эфира
                         \ signs when moving objects and stardust
 
 .K2
 
- SKIP 4                 \ Temporary storage, used in a number of places
+ SKIP 4                 \ Temporary storage, used in a number of places Координаты планеты
 
  ORG &00D1
 
