@@ -90,7 +90,7 @@
  f8 = &76               \ Internal key number for red key f8 (Status Mode)
  f9 = &77               \ Internal key number for red key f9 (Inventory)
 
- RE = &23               \ The obfuscation byte used to hide the recursive tokens
+ RE = &23               \ The obfuscation byte used to hide the recursive tokens 29
                         \ table from crackers viewing the binary code
 
  VIA = &FE00            \ Memory-mapped space for accessing internal hardware, Место видеопамяти
@@ -103,7 +103,7 @@
  OSWORD = &FFF1         \ The address for the OSWORD routine, which is used Хак через синглетон позволяющий быстрее вводить данные типа имен в видеопамять в том числе и для издавания звуков
                         \ twice in the main game code
 
- OSFILE = &FFDD         \ The address for the OSFILE routine, which is used Хук для передачи адреса ленты для записи блока данных на носитель
+ OSFILE = &FFDD         \ The address for the OSFILE routine, which is used Хук для передачи адреса ленты для записи блока данных на носитель 37
                         \ once in the main game code
 
 \ ******************************************************************************
@@ -151,7 +151,7 @@
 
 .SCH
 
- SKIP 1                 \ Screen address (high byte)
+ SKIP 1                 \ Screen address (high byte) 9
 
 .XX16
 
@@ -160,7 +160,7 @@
 
 .P
 
- SKIP 3                 \ Temporary storage, used in a number of places
+ SKIP 3                 \ Temporary storage, used in a number of places 32
 
 .XX0
 
@@ -184,7 +184,7 @@
 
 .XX
 
- SKIP 2                 \ Temporary storage, typically used for storing a 16-bit Координата X
+ SKIP 2                 \ Temporary storage, typically used for storing a 16-bit Координата X 40
                         \ x-coordinate
 
 .YY
@@ -261,7 +261,7 @@
 
 .ECMA
 
- SKIP 1                 \ The E.C.M. countdown timer, which determines whether энергия противоракетной системы
+ SKIP 1                 \ The E.C.M. countdown timer, which determines whether энергия противоракетной системы 51
                         \ an E.C.M. system is currently operating:
                         \
                         \   * 0 = E.C.M. is off
@@ -295,7 +295,7 @@
 
 .X1
 
- SKIP 1                 \ Temporary storage, typically used for x-coordinates in
+ SKIP 1                 \ Temporary storage, typically used for x-coordinates in 52
                         \ line-drawing routines
 
 .Y1
@@ -313,11 +313,11 @@
  SKIP 1                 \ Temporary storage, typically used for y-coordinates in
                         \ line-drawing routines
 
- SKIP 2                 \ The last two bytes of the XX15 block
+ SKIP 2                 \ The last two bytes of the XX15 block 57
 
 .XX12
 
- SKIP 6                 \ Temporary storage for a block of values, used in a
+ SKIP 6                 \ Temporary storage for a block of values, used in a 63
                         \ number of places
 
 .K
@@ -346,7 +346,7 @@
 
 .KY2
 
- SKIP 1                 \ Space is being pressed Увеличить скорость
+ SKIP 1                 \ Space is being pressed Увеличить скорость 70
                         \
                         \   * 0 = no
                         \
@@ -429,7 +429,7 @@
 
 .KY16
 
- SKIP 1                 \ "M" is being pressed Запустить ракету
+ SKIP 1                 \ "M" is being pressed Запустить ракету 80
                         \
                         \   * 0 = no
                         \
@@ -461,7 +461,7 @@
 
 .LAS
 
- SKIP 1                 \ Contains the laser power of the laser fitted to the Наличие лазера
+ SKIP 1                 \ Contains the laser power of the laser fitted to the Наличие лазера 84
                         \ current space view (or 0 if there is no laser fitted
                         \ to the current view)
                         \
@@ -472,7 +472,7 @@
 
 .MSTG
 
- SKIP 1                 \ The current missile lock target из 12 целей для захвата по максимальному количеству кораблей
+ SKIP 1                 \ The current missile lock target из 12 целей для захвата по максимальному количеству кораблей 85
                         \
                         \   * &FF = no target
                         \
@@ -486,7 +486,7 @@
 
 .INWK
 
- SKIP 33                \ The zero-page internal workspace for the current ship Данные для текущего коробля
+ SKIP 33                \ The zero-page internal workspace for the current ship Данные для текущего коробля 118
                         \ data block
                         \
                         \ As operations on zero page locations are faster and
@@ -503,8 +503,8 @@
 
 .XX19
 
- SKIP NI% - 33          \ XX19(1 0) shares its location with INWK(34 33), which Начало списка вершин и ребер
-                        \ contains the address of the ship line heap
+ SKIP NI% - 33          \ XX19(1 0) shares its location with INWK(34 33), which Начало списка вершин и ребер 122
+                        \ contains the address of the ship line heap (36 - 33)
 
 .LSP
 
@@ -515,7 +515,7 @@
 
 .QQ15
 
- SKIP 6                 \ The three 16-bit seeds for the selected system, i.e.
+ SKIP 6                 \ The three 16-bit seeds for the selected system, i.e. 129
                         \ the one in the crosshairs in the Short-range Chart
                         \
                         \ See the deep dives on "Galaxy and system seeds" and
@@ -534,7 +534,7 @@
 
 .QQ17
 
- SKIP 1                 \ Contains a number of flags that affect how text tokens
+ SKIP 1                 \ Contains a number of flags that affect how text tokens 130
                         \ are printed, particularly capitalisation:
                         \
                         \   * If all bits are set (255) then text printing is
@@ -568,7 +568,7 @@
 
 .K6
 
- SKIP 5                 \ Temporary storage, typically used for storing
+ SKIP 5                 \ Temporary storage, typically used for storing 138
                         \ coordinates during vector calculations
 
 .ALP1
@@ -578,13 +578,13 @@
 
 .ALP2
 
- SKIP 2                 \ Bit 7 of ALP2 = sign of the roll angle in ALPHA
+ SKIP 2                 \ Bit 7 of ALP2 = sign of the roll angle in ALPHA 141
                         \
                         \ Bit 7 of ALP2+1 = opposite sign to ALP2 and ALPHA
 
 .BET2
 
- SKIP 2                 \ Bit 7 of BET2 = sign of the pitch angle in BETA
+ SKIP 2                 \ Bit 7 of BET2 = sign of the pitch angle in BETA 143
                         \
                         \ Bit 7 of BET2+1 = opposite sign to BET2 and BETA
 
@@ -601,7 +601,7 @@
 
 .U
 
- SKIP 1                 \ Temporary storage, used in a number of places
+ SKIP 1                 \ Temporary storage, used in a number of places 147
 
 .Q
 
@@ -613,7 +613,7 @@
 
 .S
 
- SKIP 1                 \ Temporary storage, used in a number of places
+ SKIP 1                 \ Temporary storage, used in a number of places 150
 
 .XSAV
 
@@ -633,7 +633,7 @@
 
 .QQ11
 
- SKIP 1                 \ The number of the current view:
+ SKIP 1                 \ The number of the current view: 154
                         \
                         \   0   = Space view
                         \   1   = Title screen
@@ -655,7 +655,7 @@
 
 .ZZ
 
- SKIP 1                 \ Temporary storage, typically used for distance values
+ SKIP 1                 \ Temporary storage, typically used for distance values 155
 
 .XX13
 
@@ -664,7 +664,7 @@
 
 .MCNT
 
- SKIP 1                 \ The main loop counter
+ SKIP 1                 \ The main loop counter 157
                         \
                         \ This counter determines how often certain actions are
                         \ performed within the main loop. See the deep dive on
@@ -673,7 +673,7 @@
 
 .DL
 
- SKIP 1                 \ Vertical sync flag Прерывание на отрисовку экрана
+ SKIP 1                 \ Vertical sync flag Прерывание на отрисовку экрана 158
                         \
                         \ DL gets set to 30 every time we reach vertical sync on
                         \ the video system, which happens 50 times a second
@@ -692,7 +692,7 @@
 
 .JSTX
 
- SKIP 1                 \ Our current roll rate скорость поворота вправо — влево
+ SKIP 1                 \ Our current roll rate скорость поворота вправо — влево 160
                         \
                         \ This value is shown in the dashboard's RL indicator,
                         \ and determines the rate at which we are rolling
@@ -741,7 +741,7 @@
 
 .QQ12
 
- SKIP 1                 \ Our "docked" status Вылетели или невылетели
+ SKIP 1                 \ Our "docked" status Вылетели или невылетели 163
                         \
                         \   * 0 = we are not docked
                         \
@@ -755,7 +755,7 @@
 
 .SWAP
 
- SKIP 1                 \ Temporary storage, used to store a flag that records Время загрузки формы корабля
+ SKIP 1                 \ Temporary storage, used to store a flag that records Время загрузки формы корабля 165
                         \ whether or not we had to swap a line's start and end
                         \ coordinates around when clipping the line in routine
                         \ LL145 (the flag is used in places like BLINE to swap
@@ -786,7 +786,7 @@
 
 .STP
 
- SKIP 1                 \ The step size for drawing circles Сколько сегментов в контуре планеты
+ SKIP 1                 \ The step size for drawing circles Сколько сегментов в контуре планеты 170
                         \
                         \ Circles in Elite are split up into 64 points, and the
                         \ step size determines how many points to skip with each
@@ -803,7 +803,7 @@
 
 .XX4
 
- SKIP 1                 \ Temporary storage, used in a number of places
+ SKIP 1                 \ Temporary storage, used in a number of places 171
 
 .XX20
 
@@ -820,18 +820,18 @@
 
 .RAT2
 
- SKIP 1                 \ Temporary storage, used to store the pitch and roll Направление спирали эфира
+ SKIP 1                 \ Temporary storage, used to store the pitch and roll Направление спирали эфира 175
                         \ signs when moving objects and stardust
 
 .K2
 
- SKIP 4                 \ Temporary storage, used in a number of places Координаты планеты
-
+ SKIP 4                 \ Temporary storage, used in a number of places Координаты планеты 179
+                        \ Пропущена структура в 30 байт
  ORG &00D1
 
 .T
 
- SKIP 1                 \ Temporary storage, used in a number of places
+ SKIP 1                 \ Temporary storage, used in a number of places 209
 
 .K3
 
